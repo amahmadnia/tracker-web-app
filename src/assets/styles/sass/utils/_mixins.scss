@@ -1,0 +1,8 @@
+@use '@/assets/styles/sass/base/typography' as t;
+
+@mixin typographyPreset($type) {
+  $selectedStyle: map-get(t.$typographyPresets, $type);
+
+  font-weight: map-get($selectedStyle, weight);
+  font-size: map-get($selectedStyle, size);
+}

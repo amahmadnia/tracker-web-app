@@ -1,0 +1,72 @@
+@use '../abstracts' as *;
+@use '../utils/alignment' as *;
+@use '../utils/mixins' as mixin;
+
+.dashboard {
+  @extend .center-flex-vertically;
+  justify-content: space-between;
+  max-width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  margin: 0;
+
+  &__navbar {
+    position: fixed;
+    flex: 0.3;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $color-light-surface;
+    min-width: 1rem;
+    height: 100%;
+    padding: 0.5rem;
+  }
+
+  &__sidebar {
+    flex: 0.3;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-light-surface;
+    padding: 1.7rem 2rem 0 2rem;
+    height: 100%;
+  }
+
+  &__main {
+    flex: 1;
+    padding: 1rem 1.4rem 0 1.4rem;
+    margin: 0.75rem 60px auto 0;
+    background: $color-light-default;
+    border-radius: 2.5rem 2.5rem 0 0;
+    width: 60vw;
+    min-height: 100vh;
+
+
+    &-content {
+      padding: 1rem 3.5rem;
+    }
+  }
+}
+
+.section {
+  width: 100%;
+
+  &__header {
+    text-align: right;
+    padding: 0 ;
+    margin: 0.2rem 1rem 0;
+
+    h3 {
+      margin: 0;
+      @include mixin.typographyPreset('headline-5');
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.8rem 0.6rem;
+  }
+}

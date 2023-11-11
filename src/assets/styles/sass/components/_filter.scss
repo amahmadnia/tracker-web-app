@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+.tag-filter-box {
+  max-width: 17rem;
+  margin: 0 auto;
+
+  &__search-input {
+    width: 100%;
+    text-align: right;
+  }
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 1rem;
+  }
+}
+
+.filter-tags {
+  display: flex;
+  margin: 0;
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+  border-radius: 8px;
+  height: auto;
+}
