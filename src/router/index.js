@@ -13,7 +13,7 @@ const routes = [
     name: home.name,
     component: () => import('@/views/dashboard/TheHomeView.vue'),
     meta: {
-      requiresAuth: true,
+      requiresAuth: false,
       title: home.title
     }
   },
@@ -22,7 +22,7 @@ const routes = [
     name: event.name,
     component: () => import('@/views/dashboard/TheEventView.vue'),
     meta: {
-      requiresAuth: true,
+      requiresAuth: false,
       title: event.title
     }
   },
@@ -31,7 +31,7 @@ const routes = [
     name: activity.name,
     component: () => import('@/views/dashboard/TheActivityView.vue'),
     meta: {
-      requiresAuth: true,
+      requiresAuth: false,
       title: activity.title
     }
   },
@@ -40,7 +40,7 @@ const routes = [
     name: activityType.name,
     component: () => import('@/views/dashboard/TheActivityTypeView.vue'),
     meta: {
-      requiresAuth: true,
+      requiresAuth: false,
       title: activityType.title
     }
   },

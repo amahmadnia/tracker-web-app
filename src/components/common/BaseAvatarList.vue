@@ -26,7 +26,7 @@ const visibleAvatars = computed(() => props.avatars.slice(0, 5))
 <template>
   <ul class="base-avatar-list">
     <li v-for="avatar in visibleAvatars" class="base-avatar-list__avatar" :key="avatar">
-      <BaseAvatar image-source="https://ui-avatars.com/api/?name=grhyfdt" />
+      <BaseAvatar image-source="3" />
     </li>
     <li v-if="remainingAvatars" class="base-avatar-list__placeholder">
       <BaseIcon icon-name="AvatarPlaceholder" size="big" />
@@ -73,7 +73,7 @@ $avatar-margin-right: -0.8rem;
   &__placeholder {
     margin: 0.2rem $avatar-margin-right 0 0;
     transition: transform 0.2s ease;
-    z-index: 1;
+    z-index: 0;
     transform: scale(1.1);
   }
 

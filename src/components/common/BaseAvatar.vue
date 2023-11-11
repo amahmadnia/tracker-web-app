@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue'
+import { randomIntFromInterval } from '@/utils/indexGenerator'
 
 const props = defineProps({
   altText: {
@@ -33,22 +34,16 @@ const avatarClassNames = computed(() => ({
   'base-avatar__img--selected': props.isSelected
 }))
 
-const avatarPictures = [
-  '@/assets/images/static-avatar-2.png',
-  '@/assets/images/static-avatar-3.png',
-  '@/assets/images/static-avatar-4.png'
-]
-const randomAvatarPictureIndex = computed(() => {
-  const randomIndex = Math.floor(Math.random() * avatarPictures.length)
-  return avatarPictures[randomIndex]
-})
+const imageSrcIndex = randomIntFromInterval(3, 8)
+
+const imageUrl = new URL(`/src/assets/images/static-avatar-${imageSrcIndex}.png`, import.meta.url)
 </script>
 
 <template>
   <div class="base-avatar">
     <BaseIcon v-show="isSelected" class="base-avatar__active-icon" icon-name="TickCircle" />
     <div class="base-avatar__img-wrapper">
-      <img :class="avatarClassNames" src="@/assets/images/static-avatar-4.png" :alt="altText" />
+      <img :class="avatarClassNames" :src="imageUrl" :alt="altText" />
     </div>
   </div>
 </template>
